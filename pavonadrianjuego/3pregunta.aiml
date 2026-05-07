@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<topic name="INTERROGATORIO">
+  <category>
+    <pattern>IBAMOS A EL *</pattern>
+    <template>
+      <think>
+        <set name="destino"><star/></set>
+        <set name="last_question">Escribe 'VER DECISION FINAL' para terminar.</set>
+      </think>
+      ¿A <get name="destino"/>? Tomo nota. Di: <b>VER DECISION FINAL</b> para terminar.
+    </template>
+  </category>
+
+  <category>
+      <pattern>IBAMOS AL *</pattern>
+      <template>
+          <srai>IBAMOS A EL <star/></srai>
+          </template>
+          </category>
+  <category>
+      <pattern>AL *</pattern>
+      <template><srai>IBAMOS A EL <star/></srai>
+      </template>
+      </category>
+</topic>
+</aiml>

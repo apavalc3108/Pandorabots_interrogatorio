@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+  <category>
+    <pattern>VER MIS RESPUESTAS</pattern>
+    <template>
+      Dijiste que estabas en: <get name="lugar_coartada"/><br/>
+      Con: <get name="sospechoso"/><br/>
+      Sospecha: <get name="sospecha"/><br/>
+      ¿Quieres cambiar algo?
+    </template>
+  </category>
+</aiml>

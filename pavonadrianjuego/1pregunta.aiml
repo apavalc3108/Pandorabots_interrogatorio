@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<topic name="INTERROGATORIO">
+  <category>
+    <pattern>ESTABA EN *</pattern>
+    <template>
+      <think>
+      <set name="lugar_coartada"><uppercase><star/></uppercase></set>
+      <set name="last_question">¿Quién estaba contigo?</set>
+    </think>
+      ¿En <get name="lugar_coartada"/>? Ya veo... ¿Y QUIEN ESTABA CONTIGO?
+    </template>
+  </category>
+
+  <category>
+      <pattern>ESTABA EN EL *</pattern>
+      <template>
+          <srai>ESTABA EN <star/></srai>
+      </template>
+      </category>
+  <category>
+      <pattern>EN EL *</pattern>
+      <template><srai>ESTABA EN <star/></srai>
+      </template>
+      </category>
+  <category>
+      <pattern>ESTABA *</pattern>
+      <template><srai>ESTABA EN <star/></srai>
+      </template>
+      </category>
+</topic>
+</aiml>

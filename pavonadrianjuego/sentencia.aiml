@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<topic name="INTERROGATORIO">
+  <category>
+    <pattern>VER DECISION FINAL</pattern>
+    <template>
+      <think>
+        <set name="topic">FINAL_JUEGO</set>
+        <set name="culpable">no</set>
+        
+        <condition name="lugar_coartada">
+          <li value="MUSEO"><set name="culpable">si</set></li>
+          <li value="EL MUSEO"><set name="culpable">si</set></li>
+        </condition>
+
+        <condition name="culpable" value="no">
+          <condition name="sospecha">
+            <li value="lavado_banco"><set name="culpable">si</set></li>
+            <li value="esconder_parque"><set name="culpable">si</set></li>
+            <li value="huida_banco"><set name="culpable">si</set></li>
+          </condition>
+        </condition>
+      </think>
+
+      <b>--- INFORME POLICIAL FINAL ---</b><br/>
+      Analizando pruebas...<br/>
+      Declaraste estar en <b><get name="lugar_coartada"/></b> acompañado de <b><get name="sospechoso"/></b>.<br/><br/>
+
+      <condition name="culpable">
+        <li value="si">
+          <condition name="lugar_coartada">
+             <li value="MUSEO">¡TE TENGO! El robo fue precisamente en el museo.</li>
+             <li value="EL MUSEO">¡TE TENGO! El robo fue precisamente en el museo.</li>
+             <li>Tus movimientos hacia el <get name="destino"/> te delatan. ¡Sabemos que mentías!</li>
+          </condition>
+          <br/><b>¡QUEDAS DETENIDO!</b><br/>
+          <image>https://i.blogs.es/0f2ad1/istock_000012526327_medium/1366_2000.jpg</image>
+        </li>
+        <li>
+          No tenemos pruebas suficientes para retenerte...<br/>
+          Puedes marcharte, pero te estaremos vigilando.
+          <image>https://studentsforliberty.org/wp-content/uploads/2024/04/Libertad-final-Diego-Alejandro-Velasquez-Lozada.png</image>
+        </li>
+      </condition>
+
+      <br/><br/>
+      <b>¿Quieres volver a jugar?</b><br/>
+      <button>
+        <text>REINTENTAR JUEGO</text>
+        <postback>INICIAR JUEGO</postback>
+      </button>
+    </template>
+  </category>
+</topic>
+</aiml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<topic name="INTERROGATORIO">
+  <category>
+    <pattern>ESTABA CON *</pattern>
+    <template>
+      <think>
+      <set name="sospechoso"><uppercase><star/></uppercase></set>
+      <set name="last_question">¿Hacia dónde os dirigíais?</set>
+    </think>
+      ¿Con <get name="sospechoso"/>? Menuda compañía... ¿Y HACIA DONDE OS DIRIGIAIS?
+    </template>
+  </category>
+
+  <category>
+      <pattern>CON *</pattern>
+      <template>
+          <srai>ESTABA CON <star/></srai>
+      </template>
+      </category>
+  <category>
+      <pattern>CON NADIE</pattern>
+      <template>
+          <think><set name="sospechoso">nadie</set></think>¿Solo? Sospechoso... ¿Y HACIA DONDE TE DIRIGIAS?
+          </template>
+          </category>
+</topic>
+</aiml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+  <category>
+    <pattern>INICIAR JUEGO</pattern>
+    <template>
+      <think>
+        <set name="topic">INTERROGATORIO</set>
+        <set name="last_question">¿Dónde estabas el día 1 de enero a las 10 PM?</set>
+      </think>
+      <think>
+      <set name="topic">INTERROGATORIO</set>
+      <set name="lugar_coartada">desconocido</set>
+      <set name="sospechoso">nadie</set>
+      <set name="sospecha">ninguna</set>
+      <set name="last_question">¿Dónde estabas el día 1 de enero a las 10 PM?</set>
+    </think>
+      <b>Vamos a jugar a interrogatorio inverso</b><br/>
+      Recreamos el siguiente escenario:<br/>
+      Eres un criminal y yo soy el detective. Te haré preguntas sobre el robo de anoche.<br/>
+      Tu objetivo es que no te pille mintiendo.<br/>
+      Siéntese, por favor. Empecemos...<br/><br/>
+      ¿DONDE ESTABAS EL DIA 1 DE ENERO A LAS 10 PM?
+    </template>
+  </category>
+</aiml>

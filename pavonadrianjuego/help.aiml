@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+    <pattern>AYUDA</pattern>
+    <template>
+        <think><set name="topic">AYUDA</set></think>
+        <b>--- GUÍA DEL INTERROGATORIO ---</b><br/>
+        Estás siendo interrogado por un robo. Para avanzar, puedes decir:<br/>
+        <b>"Estaba en..."</b> (Dime dónde estabas anoche).<br/>
+        <b>"Con..."</b> (Dime quién te acompañaba).<br/>
+        <b>"Íbamos a..."</b> (Dime cuál era vuestro destino).<br/>
+        <b>"Ver mis respuestas"</b> (Para recordar tu coartada).<br/>
+        <b>"Ver decision final"</b> (Para terminar el juego).<br/>
+        <br/>
+        ¿Entendido? Escribe <b>VOLVER</b> para seguir con el interrogatorio.
+    </template>
+</category>
+<category>
+    <pattern>HELP</pattern>
+    <template><srai>AYUDA</srai></template>
+</category>
+
+<category>
+    <pattern>NECESITO AYUDA</pattern>
+    <template><srai>AYUDA</srai></template>
+</category>
+
+<category>
+    <pattern>QUE HAGO</pattern> 
+    <template><srai>AYUDA</srai></template>
+</category>
+
+<category>
+    <pattern>OPCIONES</pattern>
+    <template><srai>AYUDA</srai></template>
+</category>
+<topic name="AYUDA">
+    <category>
+        <pattern>VOLVER</pattern>
+        <template>
+            <think><set name="topic">INTERROGATORIO</set></think>
+            Más te vale. Regresemos al asunto...
+        </template>
+    </category>
+</topic>
+</aiml>

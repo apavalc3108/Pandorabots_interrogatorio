@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<topic name="INTERROGATORIO">
+
+  <category>
+    <pattern>^ BANCO ^</pattern>
+    <template>
+      <think>
+        <set name="sospecha">lavado_banco</set>
+        <set name="last_question">Escribe: VER DECISION FINAL</set>
+      </think>
+      ¿Al banco a estas horas? Sospechoso... <br/>
+      Si no tienes nada más que declarar, di: <b>VER DECISION FINAL</b>.
+    </template>
+  </category>
+
+  <category>
+    <pattern>^ PARQUE ^</pattern>
+    <template>
+      <think>
+        <set name="sospecha">esconder_parque</set>
+        <set name="last_question">Escribe: VER DECISION FINAL</set>
+      </think>
+      El parque estaba muy solo anoche... ¿Qué escondías? <br/>
+      Si esa es toda tu historia, di: <b>VER DECISION FINAL</b>.
+    </template>
+  </category>
+
+  <category>
+    <pattern>^ CASA ^</pattern>
+    <template>
+      <think>
+        <set name="sospecha">ninguna</set>
+        <set name="last_question">Escribe: VER DECISION FINAL</set>
+      </think>
+      ¿A casa? Una coartada muy común. Veremos si te creo... <br/>
+      Escribe: <b>VER DECISION FINAL</b>.
+    </template>
+  </category>
+
+</topic>
+</aiml>
